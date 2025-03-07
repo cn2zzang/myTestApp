@@ -10,11 +10,14 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@shadcn/ui": "^0.0.4",
     "@types/react-router-dom": "^5.3.3",
     "crypto-browserify": "^3.12.1",
+    "date-fns": "^4.1.0",
     "react": "^19.0.0",
+    "react-calendar": "^5.1.0",
     "react-dom": "^19.0.0",
-    "react-router-dom": "^7.1.5",
+    "react-router-dom": "^7.2.0",
     "webview-bridge": "^1.1.0"
   },
   "devDependencies": {

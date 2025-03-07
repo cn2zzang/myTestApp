@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
+import Calendar from "./Calendar";
 
 function App() {
   const [imageUri, setImageUri] = useState(null);
@@ -12,7 +13,7 @@ function App() {
 
   useEffect(() => {
     console.log("hihihi");
-    const handleMessage = (event) => {
+    const handleMessage = (event: MessageEvent) => {
       const data = JSON.parse(event.data);
 
       console.log(123, { event, data });
@@ -29,9 +30,7 @@ function App() {
 
   return (
     <>
-      <div>
-        <h1>React WebView</h1>
-      </div>
+      <Calendar />
       <button onClick={requestCameraAccess}>📸 사진 선택</button>
       {imageUri ? (
         <img
