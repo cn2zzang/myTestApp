@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import Calendar from "./Calendar";
+import DiaryModal from "./DiaryModal";
 
 function App() {
   const [imageUri, setImageUri] = useState(null);
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <>
-      <Calendar />
+      {/* <Calendar />
       <button onClick={requestCameraAccess}>📸 사진 선택</button>
       {imageUri ? (
         <img
@@ -40,7 +40,8 @@ function App() {
         />
       ) : (
         <p>이미지를 선택해 주세요.</p>
-      )}
+      )} */}
+      <DiaryModal />
     </>
   );
 }

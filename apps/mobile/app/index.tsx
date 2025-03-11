@@ -92,7 +92,7 @@ export default function Page() {
         // allowUniversalAccessFromFileURLs // 다른 파일 접근 허용
         // originWhitelist={["*"]} // 모든 도메인 허용
       />
-      <Button title="Send to WebView" onPress={sendMessageToWeb} />
+      {/* <Button title="Send to WebView" onPress={sendMessageToWeb} /> */}
     </View>
   );
 }
