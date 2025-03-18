@@ -60,15 +60,11 @@ export default function Page() {
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true, // 편집 기능 활성화
       aspect: [4, 3], // 비율 지정
-      quality: 1, // 품질 (0 ~ 1)
+      quality: 0.001, // 품질 (0 ~ 1)
       base64: true,
     });
 
-    console.log("pickImageFromGallery", result);
-
     if (!result.canceled) {
-      console.log("📷 선택된 이미지:", result.assets[0].uri);
-
       const imageUri = `data:image/jpeg;base64,${result.assets[0].base64}`;
 
       webViewRef.current?.postMessage(

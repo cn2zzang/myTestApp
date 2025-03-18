@@ -6,9 +6,6 @@ export default function useCameraImage() {
   useEffect(() => {
     const handleMessage = (event: MessageEvent) => {
       const data = JSON.parse(event.data);
-
-      console.log(123, { event, data });
-
       if (data.type === "IMAGE") {
         console.log("image", data.imageUri);
         setImageUri(data.imageUri);
@@ -29,5 +26,10 @@ export default function useCameraImage() {
     setImageUri(null);
   };
 
-  return { imageUri, resetImageUri, handleRequestCamera };
+  return {
+    imageUri,
+    setImageUri,
+    resetImageUri,
+    handleRequestCamera,
+  };
 }

@@ -2,7 +2,10 @@
   "name": "my-test-app",
   "private": true,
   "workspaces": {
-    "packages": ["apps/*", "packages/*"]
+    "packages": [
+      "apps/*",
+      "packages/*"
+    ]
   },
   "version": "1.0.0",
   "description": "",
@@ -12,5 +15,8 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^11.4.0"
+  }
 }
