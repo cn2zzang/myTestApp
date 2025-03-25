@@ -3,6 +3,7 @@ import { StyleSheet, Text, View, Button, Alert } from "react-native";
 import { WebView } from "react-native-webview";
 
 import * as ImagePicker from "expo-image-picker";
+import { useNotification } from "@/hooks/useNotification";
 
 const requestPhotoPermissions = async () => {
   // 앨범(갤러리) 접근 권한 요청
@@ -34,6 +35,7 @@ const takePhotoWithCamera = async () => {
 };
 
 export default function Page() {
+  useNotification();
   const webViewRef = useRef<WebView>(null);
 
   const handleWebViewMessage = async (event: any) => {
