@@ -82,7 +82,7 @@ export default function Page() {
     <View style={styles.container}>
       <WebView
         ref={webViewRef}
-        source={{ uri: "http://localhost:5173/" }}
+        source={{ uri: "https://my-test-app-blue.vercel.app/" }}
         style={{ flex: 1 }}
         onMessage={handleWebViewMessage}
         webviewDebuggingEnabled
