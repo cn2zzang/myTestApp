@@ -10,6 +10,7 @@ import {
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { isMobile } from "react-device-detect";
 
 import "@/styles/calendar.css";
 import useCameraImage from "./hooks/useCameraImage";
@@ -82,7 +83,24 @@ const DiaryModal = () => {
   };
 
   const handleImage = () => {
-    handleRequestCamera();
+    if (isMobile) {
+      handleRequestCamera();
+    } else {
+      const fileInput = document.createElement("input");
+      fileInput.type = "file";
+      fileInput.accept = "image/*";
+      fileInput.onchange = (event) => {
+        const file = (event.target as HTMLInputElement).files?.[0];
+        if (file) {
+          const reader = new FileReader();
+          reader.onload = () => {
+            setImageUri(reader.result as string);
+          };
+          reader.readAsDataURL(file);
+        }
+      };
+      fileInput.click();
+    }
   };
 
   const handleOpen = (open: boolean) => {
@@ -94,10 +112,9 @@ const DiaryModal = () => {
     <div className="flex flex-col items-center w-full">
       <Calendar
         onClickDay={handleDateClick}
-        className="w-full"
+        className="w-full flex flex-col"
         tileContent={({ date }) => {
           const formattedDate = format(date, "yyyy-MM-dd");
-          console.log("date", { date, formattedDate });
 
           const diary = diaries.find((data) => data.date === formattedDate);
           return diary ? (

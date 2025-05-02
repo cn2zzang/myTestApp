@@ -17,6 +17,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "firebase": "^11.4.0"
+    "firebase": "^11.4.0",
+    "react-device-detect": "^2.2.3"
   }
 }
