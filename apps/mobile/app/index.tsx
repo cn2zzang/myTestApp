@@ -82,14 +82,14 @@ export default function Page() {
     <View style={styles.container}>
       <WebView
         ref={webViewRef}
-        // source={{ uri: "https://my-test-app-blue.vercel.app/" }}
-        source={{ uri: "http://localhost:5173/" }}
+        source={{ uri: "https://my-test-app-blue.vercel.app/" }}
+        // source={{ uri: "http://localhost:5173/" }}
         style={{ flex: 1 }}
         onMessage={handleWebViewMessage}
         webviewDebuggingEnabled
-        // allowFileAccess // 파일 접근 허용
-        // allowUniversalAccessFromFileURLs // 다른 파일 접근 허용
-        // originWhitelist={["*"]} // 모든 도메인 허용
+      // allowFileAccess // 파일 접근 허용
+      // allowUniversalAccessFromFileURLs // 다른 파일 접근 허용
+      // originWhitelist={["*"]} // 모든 도메인 허용
       />
       {/* <Button title="Send to WebView" onPress={sendMessageToWeb} /> */}
     </View>
